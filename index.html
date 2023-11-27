@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin giao dịch Manh VTC</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin-top: 15px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;
+        }
+
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #d3d3d3;
+            background-clip: border-box;
+            border: 0 solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+
+        .gutters-sm>.col,
+        .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+        .mb-3,
+        .my-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+
+        .h-100 {
+            height: 100% !important;
+        }
+
+        .shadow-none {
+            box-shadow: none !important;
+        }
+
+        .banks {
+            width: 100%;
+            --size: 100px;
+            --border-size: 2px;
+            --border-rounded: 25px;
+            color:"#fff";
+
+        }
+
+        .bank {
+            width: 100%;
+            height: var(--size);
+            background: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            border: var(--border-size) solid var(--dark-color);
+            transition: 0.2s ease-in-out;
+            animation: fadein 2s;
+            align-items: center;
+        }
+
+        .bank-logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .bank-info>p {
+            font-weight: 500;
+            line-height: 1;
+            padding-bottom: 0px;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        .bank-info {
+            flex: 1;
+            text-align: center;
+            padding: 10px 7.5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bank-name {
+            font-size: 14px;
+            font-weight: 700 !important;
+        }
+
+        .bank-number {
+            font-size: 13px;
+        }
+
+        .bank-owner {
+            font-size: 13px;
+        }
+
+        .btn-copy {
+            width: 60px;
+            text-align: center;
+            font-size: 12px;
+            height: fit-content;
+            padding: 5px 10px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 15px
+        }
+
+        .btn-qrcode {
+            width: 70px;
+            text-align: center;
+            font-size: 12px;
+            height: fit-content;
+            padding: 5px 10px;
+            position: relative;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            margin-right: 15px
+        }
+
+        .btn-copy:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: currentColor;
+            border-radius: 10px;
+            opacity: 0.1;
+        }
+
+        .btn-qrcode:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: currentColor;
+            border-radius: 10px;
+            opacity: 0.1;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        body {
+            background-image: url('img/bg_manhVTC.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="container">
+        <div class="main-body">
+            <div class="row gutters-sm">
+                <div class="col-md-8 mb-3 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <!-- <img src="/public/userfiles/thinh_phat_-_88vin_tet_6.png" alt="Avatar" class="rounded-circle" width="150"> -->
+                                <div class="mt-3">
+                                    <h4 style="text-align: center;"><span style="color:#e74c3c;"><b>ĐẠI LÝ CẤP 1 Mạnh VTC</b></span></h4>
+                                    <p style="text-align: center;">TRANG NẠP RÚT TỰ ĐỘNG</p>
+                                    <p style="text-align: center;">UY TÍN - BẢO MẬT - SIÊU TỐC</p>
+                                    <p style="text-align: center;">Hotline : 0338.777.777 &nbsp; Zalo : 0921.869.115</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush banks">
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://logodix.com/logo/871229.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Danh sách STK</p>
+                                        <!-- <p class="bank-number"> Tên Game + Tên nhân vật </p>
+                                        <p class="bank-owner">Chuyển nhanh 24/7</p> -->
+                                    </div><span class="btn-copy " data-number=" Tên Game + Tên nhân vật "></span>
+                                </div>
+                            </li>
+                        
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="http://nhandienthuonghieu.com.vn/wp-content/uploads/2014/05/nhan-dien-thuong-hieu-vietcombank-21.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Vietcombank</p>
+                                        <p class="bank-number">1041863971</p>
+                                        <p class="bank-owner">NGUYỄN VĂN CỰ</p>
+                                    </div><span class="btn-copy " data-number="1041863971">Copy</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://static.wixstatic.com/media/9d8ed5_b92082f54b6143f6bacafff11d0c1d98~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">MBbank</p>
+                                        <p class="bank-number">0900181968888</p>
+                                        <p class="bank-owner">Đặng Kiều Minh</p>
+                                    </div><span class="btn-copy " data-number="0900181968888">Copy</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://1000logos.net/wp-content/uploads/2022/09/BIDV-logo.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">BIDV</p>
+                                        <p class="bank-number">32110001191809</p>
+                                        <p class="bank-owner">Đặng Kiều Minh</p>
+                                    </div><span class="btn-copy " data-number="32110001191809">Copy</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://inkythuatso.com/uploads/images/2021/09/logo-sacombank-inkythuatso-10-16-37-30.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Sacombank</p>
+                                        <p class="bank-number">020092776868</p>
+                                        <p class="bank-owner">Hoàng Đức Độ</p>
+                                    </div><span class="btn-copy " data-number="020092776868">Copy</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://inkythuatso.com/uploads/images/2021/11/logo-acb-vector-inkythuatso-01-10-10-25-09.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">ACB</p>
+                                        <p class="bank-number">16995647</p>
+                                        <p class="bank-owner">Đặng Văn Linh</p>
+                                    </div><span class="btn-copy " data-number="16995647">Copy</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square-768x768.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">MoMo</p>
+                                        <p class="bank-number">0372539584</p>
+                                        <p class="bank-owner">Nguyễn Văn Năm</p>
+                                    </div><span class="btn-copy " data-number="0372539584">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/nohuvn.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 Nohuvn</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/b69.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 B69</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/b29.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí Cấp 2 B29</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/sumvip.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lý C1 SumVip</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/vuaclup.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 VuaClub</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/99vin.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 99Vin</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+                            
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/na99.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 Na99</p>
+                                        <p class="bank-number">TKGD : ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/w365.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 W365</p>
+                                        <p class="bank-number">TKGD : ManhVTC99</p>
+                                    </div><span class="btn-copy " data-number="ManhVTC99">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/r365.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C1 R365</p>
+                                        <p class="bank-number">TKGD : HaiBanh68</p>
+                                    </div><span class="btn-copy " data-number="HaiBanh68">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/v88.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 V88</p>
+                                        <p class="bank-number">TKGD : V8ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="V8ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/w88.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 W88</p>
+                                        <p class="bank-number">TKGD : W8ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="W8ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/r88.jpg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 R88</p>
+                                        <p class="bank-number">TKGD : R8ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="R8ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/g88.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 G88</p>
+                                        <p class="bank-number">TKGD : G8ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="G8ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/m88.png"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 M88</p>
+                                        <p class="bank-number">TKGD : M8ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="M8ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/m365.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 M365</p>
+                                        <p class="bank-number">TKGD : M3ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="M3ManhVTC">Copy</span>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="bank"><img src="img/logo_game/g365.jpeg"
+                                        class="bank-logo img-fluid">
+                                    <div class="bank-info">
+                                        <p class="bank-name">Đại Lí C2 G365</p>
+                                        <p class="bank-number">TKGD : G3ManhVTC</p>
+                                    </div><span class="btn-copy " data-number="G3ManhVTC">Copy</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card mt-3 py-3 px-3">
+                        <p style="text-align: center;"><span style="font-size:24px;"><strong>HỖ TRỢ TRỰC TUYẾN
+                                    24/24</strong></span></p>
+                        <p style="text-align: center;">&nbsp;</p>
+                        <div class="layoutmanager">
+                            <div class="container-fluid layout-container">
+                                <div class="row layout-row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 layout-column ">
+                                        <div class="layout-column-one layout-column-editable">
+                                            <div class="layoutmanager">
+                                                <div class="container-fluid layout-container">
+                                                    <div class="row layout-row">
+                                                        <div class="col-4 layout-column ">
+                                                            <div class="layout-column-one layout-column-editable">
+                                                                <p style="text-align: center;"><a href="https://www.facebook.com/ManhVTC1990/" target="_blank"><img alt="" src="https://thinhphat.tv/public/userfiles/facebook.png" style="width: 40px; height: 40px;"></a></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 layout-column">
+                                                            <div class="layout-column-two layout-column-editable">
+                                                                <p style="text-align: center;"><a href="tel:0338777777" target="_blank"><img alt="" src="https://thinhphat.tv/public/userfiles/phone-call.png" style="width: 40px; height: 40px;"></a></p>
+                                                            </div>
+                                                        </div>
+    <div class="col-4 layout-column ">
+                                                            <div class="layout-column-one layout-column-editable">
+                                                                <p style="text-align: center;"><a href="https://t.me/manhvtc1" target="_blank"><img alt="" src="https://thinhphat.tv/public/userfiles/telegram.png" style="width: 40px; height: 40px;"></a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>&nbsp;</p>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="card mt-3 py-3 px-3">
+                        <p style="text-align: center;"><span style="font-size:24px;"><strong>CÁCH THỨC MUA &nbsp;- BÁN</strong></span></p>
+                        <table class="table" style="width: 500px;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Hướng dẫn NẠP</strong></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Sao chép STK ở phía trên và ghi kèm nội dung:</p>
+                                        <p><span style="color:#e74c3c;">Tên Game + tên nhân vật</span>.</p>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>&nbsp;</p>
+                        <table align="left" class="table" style="width: 500px;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Hướng dẫn BÁN</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Chuyển điểm tới các TKGD trên kèm nội dung&nbsp;</p>
+                                        <p><span style="color:#e74c3c;">Tên ngân hàng + STK + CTK</span></p>
+                                        <p>Thanh toán sau 30s</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="text-align: center;">&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">CopyEvent();
+        function CopyEvent() {
+            const elmCopies = document.querySelectorAll('.btn-copy');
+            elmCopies.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    elmCopies.forEach(elm => elm.textContent = 'Copy');
+                    let number = btn.getAttribute('data-number');
+                    let temp = document.createElement('textarea');
+                    temp.value = number;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    btn.textContent = 'Copied';
+                });
+            })
+        }</script><!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BY6J421RRN"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
+        gtag('config', 'G-BY6J421RRN');</script>
+</body>
+
+</html>
